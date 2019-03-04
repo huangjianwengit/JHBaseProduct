@@ -23,13 +23,13 @@ sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
 
     switch (type) {
         case SSImagePositionTypeLeft: {
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, -spacing);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, -spacing, 0, spacing);
             break;
         }
         case SSImagePositionTypeRight: {
-            self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width, 0, imageSize.width + spacing);
-            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width + spacing, 0, - titleSize.width);
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageSize.width-spacing, 0, imageSize.width + spacing);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, titleSize.width + spacing, 0, - titleSize.width-spacing);
             break;
         }
         case SSImagePositionTypeTop: {
